@@ -1,0 +1,22 @@
+{
+  "ordered_dithering": {
+    "family": "ordered",
+    "description": "Uses a threshold matrix to disperse quantization error in a regular pattern."
+  },
+  "floyd_steinberg": {
+    "family": "error diffusion",
+    "description": "Diffuses error to neighboring pixels using specific weights (7/16, 3/16, 5/16, 1/16)."
+  },
+  "atkinson": {
+    "family": "error diffusion",
+    "description": "A simplified error diffusion method that distributes error to fewer neighboring pixels."
+  },
+  "blue_noise_dithering": {
+    "family": "blue noise",
+    "description": "Uses blue-noise patterns to produce visually pleasing, less repetitive dithering."
+  },
+  "random_dithering": {
+    "family": "random",
+    "description": "Uses random noise to turn pixels on or off based on input brightness."
+  }
+}

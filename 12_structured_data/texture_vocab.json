@@ -1,0 +1,7 @@
+{
+  "grain": "Fine, evenly distributed noise that adds texture without obvious pattern repetition.",
+  "speckle": "Sparse, random dots that produce a light noise effect.",
+  "mesh": "A grid-like arrangement of pixels resembling a mesh or net.",
+  "noise_fields": "Continuous noise patterns used to generate blue-noise dithering.",
+  "banding": "Visible steps or bands in gradients caused by limited color depth."
+}

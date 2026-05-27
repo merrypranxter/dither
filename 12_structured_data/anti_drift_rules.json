@@ -1,0 +1,7 @@
+[
+  "Avoid confusing dithering with halftone patterns; true dither uses fixed-size marks or pixels.",
+  "Do not equate generic pixel art with dithering; dithering is a tonal technique within pixel art.",
+  "Prevent over-smoothing; dithering relies on visible patterns and texture.",
+  "Use consistent palettes and mark types to maintain the intended style.",
+  "Check algorithm parameters to ensure the pattern does not become too random or too ordered for the selected style."
+]

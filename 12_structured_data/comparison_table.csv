@@ -1,0 +1,4 @@
+algorithm,dithering_type,notes
+ordered_dithering,ordered,Fixed pattern based on threshold matrices
+floyd_steinberg,error diffusion,Diffuses error to neighboring pixels with fixed weights
+random_dithering,random,Uses noise to simulate tone by randomly turning pixels on/off

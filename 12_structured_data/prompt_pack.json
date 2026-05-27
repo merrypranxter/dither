@@ -1,0 +1,15 @@
+{
+  "short_prompts": [
+    "acidic ordered Bayer dither field with visible pixel thresholds and limited neon palette",
+    "one-bit error-diffusion portrait texture, old Mac bitmap feeling, crunchy black and white marks",
+    "GIF-era indexed color dither crawl with temporal palette shimmer",
+    "woven textile dither pattern where threshold cells become thread color decisions"
+  ],
+  "anti_drift_phrases": [
+    "no smooth gradients",
+    "visible fixed-size pixel or mark structure",
+    "not generic noise",
+    "not pure halftone unless explicitly hybridized",
+    "palette scarcity must remain visible"
+  ]
+}

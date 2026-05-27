@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Acid Dither Pattern Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+<script>
+let palette = [
+  [6, 2, 24],
+  [255, 28, 130],
+  [0, 218, 255],
+  [255, 241, 45],
+  [72, 255, 112],
+  [170, 80, 255]
+];
+
+let bayer4 = [
+  [0, 8, 2,10],
+  [12,4,14,6],
+  [3,11,1,9],
+  [15,7,13,5]
+];
+
+function setup() {
+  createCanvas(720, 720);
+  pixelDensity(1);
+  noSmooth();
+}
+
+function draw() {
+  loadPixels();
+  let zoom = map(mouseX, 0, width, 3, 18);
+  let chunk = floor(map(mouseY, 0, height, 1, 7));
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      let nx = (x - width/2) / width;
+      let ny = (y - height/2) / height;
+      let r = sqrt(nx*nx + ny*ny);
+      let a = atan2(ny, nx);
+      let field = sin(r * zoom * 20.0 - frameCount * 0.03) + sin(a * 8.0 + r * 35.0);
+      field = 0.5 + 0.5 * sin(field + frameCount * 0.02);
+      let t = (bayer4[floor(y/chunk)%4][floor(x/chunk)%4] + 0.5) / 16;
+      let idxColor = floor(constrain(field * (palette.length - 1) + t - 0.5, 0, palette.length - 1));
+      let c = palette[idxColor];
+      let idx = 4 * (y * width + x);
+      pixels[idx] = c[0];
+      pixels[idx+1] = c[1];
+      pixels[idx+2] = c[2];
+      pixels[idx+3] = 255;
+    }
+  }
+  updatePixels();
+  fill(255);
+  text('Acid dither pattern generator | mouse changes zoom/chunk', 12, 22);
+}
+
+function keyPressed() {
+  if (key === 's') saveCanvas('acid_dither_pattern', 'png');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "templates": [
+    {
+      "path": "15_shader_code_templates/glsl/bayer_ordered_dither.frag",
+      "type": "glsl_fragment",
+      "algorithm": "bayer_ordered_dither",
+      "best_for": [
+        "retro_computer",
+        "ordered_texture",
+        "stable_animation"
+      ],
+      "uniforms": [
+        "u_resolution",
+        "u_time",
+        "u_tex0"
+      ]
+    },
+    {
+      "path": "15_shader_code_templates/glsl/palette_quantized_bayer.frag",
+      "type": "glsl_fragment",
+      "algorithm": "palette_quantized_ordered_dither",
+      "best_for": [
+        "acid_pop",
+        "indexed_color",
+        "posterized_dither"
+      ],
+      "uniforms": [
+        "u_resolution",
+        "u_time",
+        "u_tex0"
+      ]
+    },
+    {
+      "path": "15_shader_code_templates/glsl/blue_noise_hash_dither.frag",
+      "type": "glsl_fragment",
+      "algorithm": "hash_noise_stochastic_dither",
+      "best_for": [
+        "speckle",
+        "fast_shader",
+        "noise_threshold"
+      ],
+      "uniforms": [
+        "u_resolution",
+        "u_time",
+        "u_tex0"
+      ]
+    },
+    {
+      "path": "15_shader_code_templates/p5/p5_error_diffusion_floyd_steinberg.html",
+      "type": "p5_html",
+      "algorithm": "floyd_steinberg_error_diffusion",
+      "best_for": [
+        "cpu_dither",
+        "portrait_conversion",
+        "organic_worm_texture"
+      ],
+      "controls": [
+        "mouse_click_regenerate"
+      ]
+    }
+  ]
+}
