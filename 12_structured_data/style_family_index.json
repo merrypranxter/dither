@@ -1,0 +1,18 @@
+{
+  "one_bit_macpaint": {
+    "category": "retro",
+    "description": "Classic black and white dithering reminiscent of MacPaint software."
+  },
+  "gameboy_handheld_dither": {
+    "category": "retro",
+    "description": "Uses the limited palette and pixel resolution of classic handheld consoles."
+  },
+  "compression_crust_dither": {
+    "category": "lo-fi",
+    "description": "Embraces JPEG artifacts and heavy compression as texture."
+  },
+  "modern_shader_dither": {
+    "category": "contemporary",
+    "description": "Employs GPU shaders to create dynamic dithering effects."
+  }
+}

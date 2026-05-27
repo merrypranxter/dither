@@ -1,0 +1,34 @@
+{
+  "recipes": [
+    {
+      "name": "Acid Bayer Bloom",
+      "algorithm": "bayer4",
+      "palette": "acid_pop",
+      "motion": "radial_threshold_drift"
+    },
+    {
+      "name": "Haunted GIF Crawl",
+      "algorithm": "temporal_hash",
+      "palette": "indexed_web",
+      "motion": "frame_noise"
+    },
+    {
+      "name": "One-Bit Shrine",
+      "algorithm": "atkinson_or_floyd_steinberg",
+      "palette": "mono",
+      "motion": "none"
+    },
+    {
+      "name": "Textile Threshold Loom",
+      "algorithm": "ordered_grid",
+      "palette": "thread_palette",
+      "motion": "optional_scroll"
+    },
+    {
+      "name": "CRT Candy Quantizer",
+      "algorithm": "palette_quantized_bayer",
+      "palette": "rgb_phosphor",
+      "motion": "scanline_shimmer"
+    }
+  ]
+}

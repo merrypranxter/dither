@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "artist_knobs": {
+    "crunch": {
+      "maps_to": [
+        "pixelSize",
+        "matrixScale"
+      ],
+      "range": [
+        1,
+        16
+      ],
+      "default": 3
+    },
+    "ink_weight": {
+      "maps_to": [
+        "thresholdBias",
+        "dotGain"
+      ],
+      "range": [
+        -0.25,
+        0.25
+      ],
+      "default": 0.0
+    },
+    "crawl": {
+      "maps_to": [
+        "temporalAmount"
+      ],
+      "range": [
+        0,
+        1
+      ],
+      "default": 0.0
+    },
+    "palette": {
+      "maps_to": [
+        "paletteIndex"
+      ],
+      "options": [
+        "mono",
+        "gameboy",
+        "cga",
+        "acid_pop",
+        "screenprint_duotone"
+      ]
+    },
+    "pattern": {
+      "maps_to": [
+        "matrixMode"
+      ],
+      "options": [
+        "bayer2",
+        "bayer4",
+        "bayer8",
+        "hash",
+        "blue_noise",
+        "moire"
+      ]
+    }
+  },
+  "technical_knobs": {
+    "pixelSize": {
+      "type": "float",
+      "min": 1,
+      "max": 32,
+      "default": 2
+    },
+    "thresholdBias": {
+      "type": "float",
+      "min": -0.5,
+      "max": 0.5,
+      "default": 0
+    },
+    "contrastBoost": {
+      "type": "float",
+      "min": 0.25,
+      "max": 3.0,
+      "default": 1.2
+    },
+    "dotGain": {
+      "type": "float",
+      "min": -0.25,
+      "max": 0.35,
+      "default": 0.0
+    },
+    "temporalAmount": {
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "weaveWarp": {
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0
+    }
+  }
+}

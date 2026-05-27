@@ -1,0 +1,24 @@
+{
+  "monochrome": [
+    "#000000",
+    "#FFFFFF"
+  ],
+  "gameboy": [
+    "#0F380F",
+    "#306230",
+    "#8BAC0F",
+    "#9BBC0F"
+  ],
+  "cga": [
+    "#0000FF",
+    "#00FF00",
+    "#FF00FF",
+    "#FFFFFF"
+  ],
+  "psychedelic": [
+    "#FF3F8E",
+    "#FFF95D",
+    "#34E89E",
+    "#00BFFF"
+  ]
+}

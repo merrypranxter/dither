@@ -1,0 +1,7 @@
+{
+  "dots": "Single pixel or point marks used to simulate tone.",
+  "checkerboard": "Alternating pattern of dark and light pixels creating a mesh-like texture.",
+  "worms": "Elongated clusters or streaks of pixels that resemble crawling worms.",
+  "diagonal_crawl": "Patterns of pixels that move diagonally across the image, often in error diffusion algorithms.",
+  "cluster_clouds": "Groups of pixels forming cloud-like textures in clustered dithering."
+}

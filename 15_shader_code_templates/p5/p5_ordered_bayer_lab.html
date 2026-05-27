@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ordered Bayer Dither Lab</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+<script>
+let bayer4 = [
+  [0, 8, 2,10],
+  [12,4,14,6],
+  [3,11,1,9],
+  [15,7,13,5]
+];
+
+function setup() {
+  createCanvas(720, 480);
+  pixelDensity(1);
+  noSmooth();
+}
+
+function draw() {
+  background(5, 3, 14);
+  loadPixels();
+  let pixelSize = floor(map(mouseX, 0, width, 1, 8));
+  let contrast = map(mouseY, 0, height, 2.0, 0.65);
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      let nx = x / width;
+      let ny = y / height;
+      let wave = 0.5 + 0.5 * sin(nx * 16.0 + frameCount * 0.03 + sin(ny * 12.0));
+      let radial = 1.0 - dist(x, y, width * 0.5, height * 0.5) / (width * 0.65);
+      let value = constrain((wave * 0.55 + radial * 0.45 - 0.5) * contrast + 0.5, 0, 1);
+
+      let gx = floor(x / pixelSize);
+      let gy = floor(y / pixelSize);
+      let t = (bayer4[gy % 4][gx % 4] + 0.5) / 16.0;
+      let on = value > t;
+
+      let idx = 4 * (y * width + x);
+      if (on) {
+        pixels[idx+0] = 255;
+        pixels[idx+1] = 51 + 180 * value;
+        pixels[idx+2] = 145;
+        pixels[idx+3] = 255;
+      } else {
+        pixels[idx+0] = 6;
+        pixels[idx+1] = 2;
+        pixels[idx+2] = 24;
+        pixels[idx+3] = 255;
+      }
+    }
+  }
+  updatePixels();
+
+  fill(255);
+  noStroke();
+  text(`Bayer dither | pixelSize ${pixelSize} | mouse controls crunch`, 12, 22);
+}
+</script>
+</body>
+</html>

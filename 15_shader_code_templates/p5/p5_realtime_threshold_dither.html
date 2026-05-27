@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Realtime Threshold Dither</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+<script>
+function setup() {
+  createCanvas(720, 480);
+  pixelDensity(1);
+  noSmooth();
+}
+
+function hash(x, y, seed) {
+  let n = sin(x * 127.1 + y * 311.7 + seed * 74.7) * 43758.5453;
+  return n - floor(n);
+}
+
+function draw() {
+  loadPixels();
+  let scale = map(mouseX, 0, width, 2, 28);
+  let crawl = frameCount * 0.05;
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      let nx = x / width;
+      let ny = y / height;
+      let v = 0.5 + 0.5 * sin(nx * scale + sin(ny * scale * 0.8 + crawl) * 3.0 + crawl);
+      v *= 0.65 + 0.35 * sin(dist(x, y, mouseX, mouseY) * 0.03 - frameCount * 0.08);
+      let n = hash(floor(x / 2), floor(y / 2), floor(frameCount / 4));
+      let on = v > n;
+
+      let idx = 4 * (y * width + x);
+      pixels[idx] = on ? 255 : 8;
+      pixels[idx + 1] = on ? 245 * v : 0;
+      pixels[idx + 2] = on ? 60 + 190 * ny : 28;
+      pixels[idx + 3] = 255;
+    }
+  }
+  updatePixels();
+
+  fill(255);
+  noStroke();
+  text('Realtime threshold/noise dither | mouseX changes field frequency', 12, 22);
+}
+</script>
+</body>
+</html>

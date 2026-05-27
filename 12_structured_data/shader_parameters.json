@@ -1,0 +1,7 @@
+{
+  "threshold_matrix_size": "Size of the matrix used in ordered dithering algorithms.",
+  "error_diffusion_weights": "Weights applied to neighboring pixels in error diffusion methods.",
+  "noise_scale": "Scale factor for random or blue-noise textures used in dithering.",
+  "palette": "Reference palette used for quantizing colors.",
+  "time": "Animation time parameter for temporal dithering effects."
+}

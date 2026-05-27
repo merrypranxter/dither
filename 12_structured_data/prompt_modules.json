@@ -1,0 +1,16 @@
+{
+  "formula_short": "Use simple phrases describing the subject and dither style, e.g., 'a portrait in Game Boy dither style'.",
+  "formula_long": "Construct detailed prompts combining subject, style family, palette, and algorithm, e.g., 'Generate a cyberpunk cityscape using Floyd\u2013Steinberg error diffusion and a neon palette'.",
+  "image_templates": [
+    "portrait subject + style family + palette",
+    "landscape subject + algorithm + medium"
+  ],
+  "video_templates": [
+    "animate shimmering dither patterns across the scene",
+    "cycle palettes to create motion"
+  ],
+  "shader_templates": [
+    "Apply blue-noise dithering in screen space",
+    "Combine Bayer matrices with threshold modulation"
+  ]
+}

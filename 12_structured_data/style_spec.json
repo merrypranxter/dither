@@ -1,0 +1,32 @@
+{
+  "name": "Dither",
+  "description": "A comprehensive specification for dither art style.",
+  "version": "0.1",
+  "components": {
+    "algorithms": [
+      "ordered_dithering",
+      "error_diffusion",
+      "random_dithering",
+      "blue_noise_dithering"
+    ],
+    "mark_types": [
+      "dots",
+      "checkerboard",
+      "worms",
+      "diagonal_crawl",
+      "cluster_clouds"
+    ],
+    "style_families": [
+      "one_bit_macpaint",
+      "gameboy_handheld_dither",
+      "compression_crust_dither",
+      "modern_shader_dither"
+    ],
+    "palettes": [
+      "monochrome",
+      "gameboy",
+      "cga",
+      "custom"
+    ]
+  }
+}
